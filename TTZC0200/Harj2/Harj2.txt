@@ -1,0 +1,14 @@
+program Harj2
+	GET val1
+	GET val2
+	GET val3
+	IF val1 < val2
+		IF val2 < val3
+			PRINT val1 < val2 < val3
+		ELSE
+			PRINT val1 < val3 < val2
+	ELSE
+		IF val1 < val3
+			PRINT val2 < val1 < val3
+		ELSE
+			PRINT val2 < val3 < val1
