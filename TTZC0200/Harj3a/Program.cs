@@ -24,6 +24,7 @@ namespace Harj3a
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hei maailma!");
         }
     }
 }
