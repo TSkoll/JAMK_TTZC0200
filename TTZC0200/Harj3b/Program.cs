@@ -28,6 +28,14 @@ namespace Harj3b
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Anna etunimesi");
+            string etunimi = Console.ReadLine();
+
+            Console.WriteLine("Anna sukunimesi");
+            string sukunimi = Console.ReadLine();
+
+
+            Console.WriteLine($"**********************************\n* *\n* {etunimi} *\n* {sukunimi} *\n* *\n* -------------------------------------- *\n* *\n* Asemakatu 7 *\n* 40520 JKL *");
         }
     }
 }
