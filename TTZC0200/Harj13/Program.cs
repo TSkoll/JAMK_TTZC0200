@@ -27,6 +27,14 @@ namespace Harj13
     {
         static void Main(string[] args)
         {
+            // Ei tee kauheasti järkeä C#:lla mutta tehdän silti...
+            Console.WriteLine("Anna etunimi");
+            string etunimi = Console.ReadLine();
+
+            Console.WriteLine("Anna sukunimi");
+            string sukunimi = Console.ReadLine();
+
+            Console.WriteLine($"Nimesi oli: {etunimi} {sukunimi}");
         }
     }
 }
