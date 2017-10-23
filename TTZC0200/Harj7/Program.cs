@@ -38,6 +38,23 @@ namespace Harj7
     {
         static void Main(string[] args)
         {
+            string nimi, osoite;
+            int pituus;
+            float paino;
+
+            Console.WriteLine("Anna nimesi");
+            nimi = Console.ReadLine();
+
+            Console.WriteLine("Anna pituutesi sentteinä");
+            pituus = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Anna osoitteesi");
+            osoite = Console.ReadLine();
+
+            Console.WriteLine("Anna painosi");
+            paino = Convert.ToSingle(Console.ReadLine());
+
+            Console.WriteLine($"Arvoisa {nimi}\nOsoitteesi on {osoite}\nNykyinen painosi on {paino}\nIhannepainosi on {pituus - 100f}\nErotus {(pituus - 100f) - paino}");
         }
     }
 }
