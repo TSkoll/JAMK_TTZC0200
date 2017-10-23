@@ -8,7 +8,6 @@
  *  
  *  Käytä vain kahta muuttujaa. älä vähennä lompakon sisältää, ellet voi
  *  ostaa lihapiirakkaa.
-___________________
  */
 
 using System;
@@ -23,6 +22,20 @@ namespace Harj6
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Anna rahamäärä");
+            float RahaMaara = Convert.ToSingle(Console.ReadLine());
+
+            Console.WriteLine("Anna lihapiirakan hinta");
+            float LihisHinta = Convert.ToSingle(Console.ReadLine());
+
+            if (RahaMaara >= LihisHinta)
+            {
+                Console.WriteLine($"Hip hip hurraa!\nSinulla on varaa lihapiirakkaan!\nPiirakan oston jälkeen sinulla on jäljellä vielä {RahaMaara - LihisHinta}");
+            }
+            else
+            {
+                Console.WriteLine($"No höh, nyt pitää mennä paastolinjalla.\nLihapiirakkaan oisi tarvittu vielä ${LihisHinta - RahaMaara} lisää");
+            }
         }
     }
 }
