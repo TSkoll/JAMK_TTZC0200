@@ -23,6 +23,23 @@ namespace Harj10
     {
         static void Main(string[] args)
         {
+            int positiiviset = 0;
+            int negatiiviset = 0;
+
+            while (true)
+            {
+                Console.WriteLine("Anna kokonaisluku");
+                int luku = Convert.ToInt32(Console.ReadLine());
+
+                if (luku == 0) break;
+                if (luku > 0)
+                    positiiviset++;
+                else
+                    negatiiviset++;
+            }
+
+            Console.WriteLine($"Syötit kokonaislukuja seuuravasti:\n----------------------------------\nNegatiiviset {negatiiviset} kpl {((float)negatiiviset)/(positiiviset + negatiiviset) * 100}%\nPosiitiviset {positiiviset} kpl {((float)positiiviset) / (positiiviset + negatiiviset) * 100}%\nYhteensä: {positiiviset + negatiiviset} kpl {(((float)negatiiviset + positiiviset) / (negatiiviset + positiiviset)) * 100}%");
+            Console.ReadKey(true);
         }
     }
 }
