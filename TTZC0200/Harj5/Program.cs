@@ -18,6 +18,20 @@ namespace Harj5
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Anna ensimmäinen luku");
+            int luku1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Anna toinen luku");
+            int luku2 = Convert.ToInt32(Console.ReadLine());
+
+            if (luku1 == luku2)
+            {
+                Console.WriteLine("BINGO");
+            }
+            else
+            {
+                Console.WriteLine("BONGO");
+            }
         }
     }
 }
