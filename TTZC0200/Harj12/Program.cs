@@ -25,6 +25,18 @@ namespace Harj12
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("anna kokonaisluku väliltä 1-9");
+            byte luku = Convert.ToByte(Console.ReadLine());
+
+            for (byte i = 0; i <= luku; i++)
+            {
+                for (byte j = 0; j < i; j++)
+                {
+                    Console.Write(i);
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
         }
     }
 }
