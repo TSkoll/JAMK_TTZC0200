@@ -35,6 +35,29 @@ namespace Harj14
     {
         static void Main(string[] args)
         {
+            // Tehtävä ei tee mahdottomasti järkeä C#:lla mutta tehdään silti...
+            Console.WriteLine("Anna syöte");
+            string syote = Console.ReadLine();
+
+            /*
+             *  C#:ssa string (tai char[]) ei pääty \0 null-kirjaimeen.
+             *  Microsoftin oman dokumentaation mukaan tämän sijaan kuuluisi käyttää string-tyypin (tai char[]) mukana tulee length-muuttujaa
+             *  joka kertoo char-objektien määrän.
+             *  
+             *  Mahdollisuutena olisi käyttää StringInfo-oliota, mutta tämäkään ei paljasa null-kirjainta. Täten joudun käyttämään tehtävänannon vastaisesti string.length -muuttujaa
+             *  koska parempaa vaihtoehtoa ei ole.
+             *  
+             *  Muita, mielestäni huonompia, vaihtoehtoja olisi esim. käyttää "foreach (char kirjain in syote)" -silmukkaa ja laskea manuaalisesti kirjainten määrän, mutta tämä ei
+             *  olisi laskentatehollisista syistä hyvä ratkaisu.
+             */
+
+            string palaute = "";
+            for (int i = 1; i <= syote.Length; i++)
+            {
+                palaute += syote[syote.Length - i];
+            }
+            Console.WriteLine($"Tuloste: {palaute}\nTuloste {((syote == palaute) ? "on" : "ei ole")} palindromi");
+            Console.ReadKey();
         }
     }
 }
