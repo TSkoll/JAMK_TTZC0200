@@ -16,10 +16,25 @@ using System.Threading.Tasks;
 
 namespace Harj23
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
+            while (true)
+            {
+                int valinta = Ali.Valikko();
+                if (valinta != -1)
+                    try
+                    {
+                        Ali.KasitteleValinta(valinta);
+                    }
+                    catch (ArgumentException e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                else
+                    continue;
+            }
         }
     }
 }
