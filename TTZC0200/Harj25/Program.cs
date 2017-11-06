@@ -42,6 +42,21 @@ namespace Harj25
     {
         static void Main(string[] args)
         {
+            while (true)
+            {
+                int valinta = Ali.Valikko();
+                if (valinta != -1)
+                    try
+                    {
+                        Ali.KasitteleValinta(valinta);
+                    }
+                    catch (ArgumentException e)
+                    {
+                        Console.WriteLine(e.Message + "\n");
+                    }
+                else
+                    continue;
+            }
         }
     }
 }
