@@ -35,7 +35,7 @@
  *  Anna nopeus: -5
  *  => loppu
  *
- *                                                      Käyttäjän syöte ohjelmalle lihavoitu ja kallistettu.
+ *  Käyttäjän syöte ohjelmalle lihavoitu ja kallistettu.
  *  Toteuta kayttaen taulukkoa.
  */
 
