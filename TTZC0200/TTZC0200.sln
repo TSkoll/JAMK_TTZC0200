@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harj3a", "Harj3a\Harj3a.csproj", "{CBC1E141-62F6-41AB-8E70-1938257E87F8}"
 EndProject
@@ -18,8 +18,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harj9", "Harj9\Harj9.csproj", "{F74664B7-900E-4C04-9904-6FAAE523A0F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harj10", "Harj10\Harj10.csproj", "{B57712BF-1B43-43C9-8E85-802941A83BD6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harj11", "Harj11\Harj11.csproj", "{D4D99679-6B21-4416-81FC-D8AB4C45980C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harj12", "Harj12\Harj12.csproj", "{B99875AC-E516-4A1E-99FB-6B79E68B7657}"
 EndProject
@@ -85,10 +83,6 @@ Global
 		{B57712BF-1B43-43C9-8E85-802941A83BD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B57712BF-1B43-43C9-8E85-802941A83BD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B57712BF-1B43-43C9-8E85-802941A83BD6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D4D99679-6B21-4416-81FC-D8AB4C45980C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D4D99679-6B21-4416-81FC-D8AB4C45980C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D4D99679-6B21-4416-81FC-D8AB4C45980C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D4D99679-6B21-4416-81FC-D8AB4C45980C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B99875AC-E516-4A1E-99FB-6B79E68B7657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B99875AC-E516-4A1E-99FB-6B79E68B7657}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B99875AC-E516-4A1E-99FB-6B79E68B7657}.Release|Any CPU.ActiveCfg = Release|Any CPU
