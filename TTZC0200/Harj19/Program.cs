@@ -40,17 +40,56 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Harj19
 {
     class Program
     {
+        // Antaa automaattisesti koon 5
+        public static int[] Nopeudet = { 0, 0, 0, 0, 0 };
+
+        // Käytetään nopeuksien asettamiseen
+        public static int KysymysKerta = 0;
+
         static void Main(string[] args)
         {
+            while(true)
+            {
+                Console.Clear();
+                Console.WriteLine($"Nopeudet: [{string.Join(", ", Nopeudet)}] | KA: {Nopeudet.Keskiarvo()}\nAnna luku, negatiivinen luku lopettaa ohjelman.");
+
+                int syote = Convert.ToInt32(Console.ReadLine());
+
+                // Sulje jos negatiivinen
+                if (syote < 0)
+                    break;
+
+                // Aseta syote taulukkoon
+                Nopeudet[KysymysKerta % 5] = syote;
+                KysymysKerta++;
+            }
+
+            // Tulosta lopputuloste
+            Console.Clear();
+            Console.WriteLine($"Nopeudet: [{string.Join(", ", Nopeudet)}] | KA: {Nopeudet.Keskiarvo()}\nOhjelma loppuu napin painalluksen jälkeen.");
+            Console.ReadKey();
+        }
+    }
+
+    static class Jatko
+    {
+        /// <summary>
+        /// Laskee keskiarvon annetusta taulukosta
+        /// </summary>
+        /// <param name="arvot">System.Int32[]. Taulukko arvoista.</param>
+        /// <returns>System.Double. Keskiarvo.</returns>
+        public static double Keskiarvo(this int[] arvot)
+        {
+            int summa = 0;
+            foreach (int arvo in arvot)
+                summa += arvo;
+
+            return (double)summa / arvot.Length;
         }
     }
 }
