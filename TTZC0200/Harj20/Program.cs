@@ -37,6 +37,7 @@ namespace Harj20
                     continue;
                 }
 
+                // Jos luku on negatiivinen, lopetetaan.
                 if (nopeus < 0)
                     break;
 
