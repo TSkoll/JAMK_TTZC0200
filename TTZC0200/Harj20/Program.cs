@@ -11,89 +11,57 @@ using System.Threading.Tasks;
 // Aikaisemmin tehty
 namespace Harj20
 {
-    class Program
+    static class Program
     {
-        // Lista nopeuksista
-        internal static List<int> Speeds = new List<int>();
-
-        // Keskinopeus
-        internal static int AverageSpeed = 0;
-
         static void Main(string[] args)
         {
-            // Asetetaan alkuarvot
-            Speeds.AddRange(new int[] { 0, 0, 0, 0, 0 });
+            // Nopeustaulukko
+            int[] Nopeudet = { 0, 0, 0, 0, 0 };
+
+            // Kysymyskerta
+            int Kerta = 0;
 
             while (true)
             {
-                // Tyhjennetään konsoli
-                Console.Clear();
+                // Kysytään nopeus
+                Console.WriteLine($"[{String.Join(",", Nopeudet)}] Keskinopeus: {Nopeudet.Keskinopeus()}\nAnna luku, negatiivinen luku lopettaa ohjelman.");
 
-                // Tulostetaan arvot ja ohje
-                Console.WriteLine($"Nopeudet: [{string.Join(", ", (Speeds as IEnumerable<int>).Reverse())}], keskinopeus: {AverageSpeed} km/h\n" +
-                    "Anna uusi arvo, negatiiviset arvot sulkevat ohjelman.");
-
-                // Odotetaan käyttäjän antamaa arvoa ja tallenetaan se muistiin
-                var input = Console.ReadLine();
-
-                // Testataan että arvo on numero
-                if (Int32.TryParse(input, out int value))
+                int nopeus;
+                try
                 {
-                    // Arvo numero, käsittele
-                    if (value >= 0)
-                    {
-                        // Lisää arvo nopeuksiin
-                        Speeds.Add(value);
-
-                        // Siirrä arvot
-                        Speeds = HopValues(Speeds);
-
-                        // Lasketaan keskinopeus
-                        AverageSpeed = AvgSpeed();
-
-                        // Jatka kierrosta
-                        continue;
-                    }
-                    else
-                    {
-                        // Arvo alle 0, poistu ohjelmasta koodilla 0 (ei virhettä)
-                        Environment.Exit(0);
-                    }
+                    nopeus = Convert.ToInt32(Console.ReadLine());
                 }
-                else
+                catch
                 {
-                    // Arvo ei numero, anna palaute
-                    Console.Clear();
-
-                    // Kerro virhe
-                    Console.WriteLine("Arvo ei ole numero tai on liian iso/pieni");
-
-                    // Odota 5 sekunttia
-                    Task.Delay(5000);
-
-                    // Jatka kierrosta
+                    Console.WriteLine("Syöte ei ole luku!");
                     continue;
                 }
+
+                if (nopeus < 0)
+                    break;
+
+                // Asetetaan nopeus nopeustaulukkoon
+                Nopeudet[Kerta % Nopeudet.Length] = nopeus;
+
+                Kerta++;
             }
         }
+    }
 
-        private static int AvgSpeed()
+    public static class Jatkeet
+    {
+        /// <summary>
+        /// Laskee keskinopeuden syötetystä kokonaislukutaulukosta.
+        /// </summary>
+        /// <param name="nopeudet">System.Int32[], nopeudet, josta keskinopeus lasketaan.</param>
+        /// <returns>System.Double, laskettu keskinopeus.</returns>
+        public static double Keskinopeus(this int[] nopeudet)
         {
-            // Laske keskiarvo ja palauta pyöristetty arvo
-            return Convert.ToInt32(Math.Round(Speeds.Average(), 0, MidpointRounding.ToEven));
-        }
+            int summa = 0;
+            foreach (int nopeus in nopeudet)
+                summa += nopeus;
 
-        private static List<int> HopValues(List<int> SourceValues)
-        {
-            // Luodaan palautuslista
-            var retList = new List<int>();
-
-            // Kopioidaan lista palautusmuuttujaan ja pudotetaan ensimmäinen arvo pois
-            for (var i = 0; i < SourceValues.Count - 1; i++)
-                retList.Add(SourceValues[i + 1]);
-
-            // Palautetaan uudet arvot
-            return retList;
+            return (double)summa / nopeudet.Length;
         }
     }
 }
